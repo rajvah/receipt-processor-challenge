@@ -64,8 +64,8 @@ func GetPoints() gin.HandlerFunc {
 
 		val, ok := points[id]
 		if !ok {
-			context.JSON(http.StatusBadRequest, gin.H{
-				"Status":  http.StatusBadRequest,
+			context.JSON(http.StatusNotFound, gin.H{
+				"Status":  http.StatusNotFound,
 				"Message": "error",
 				"Data":    map[string]interface{}{"data": fmt.Sprintf("ID %s not found ", id)}})
 			return
